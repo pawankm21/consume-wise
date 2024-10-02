@@ -2,26 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 36 100% 98%; /* Light orange-tinted background */
+    --foreground: 25 100% 15%; /* Dark brownish orange text */
+    --card: 36 100% 98%; /* Card background matching light orange theme */
+    --card-foreground: 25 100% 15%; /* Dark text color on cards */
+    --popover: 36 100% 98%;
+    --popover-foreground: 25 100% 15%;
+    --primary: 25 100% 50%; /* Vivid orange for primary elements */
+    --primary-foreground: 36 100% 98%; /* Light text on primary background */
+    --secondary: 36 100% 90%; /* Softer light orange for secondary elements */
+    --secondary-foreground: 25 100% 15%; /* Darker text for contrast */
+    --muted: 36 40% 90%; /* Muted orange for subtle elements */
+    --muted-foreground: 25 40% 40%; /* Subtle darker text on muted background */
+    --accent-color: #f97316; /* Bright orange accent color */
+    --accent-color-light: #fdba74; /* Lighter orange accent */
+    --accent-color-dark: #c2410c; /* Darker orange accent */
+    --accent-foreground: 25 100% 15%; /* Dark foreground for accent elements */
+    --destructive: 0 84.2% 60.2%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text on red background */
+    --border: 36 50% 80%; /* Soft orange borders */
+    --input: 36 50% 98%; /* Light input background */
+    --ring: 25 100% 50%; /* Orange ring for focus */
+    --chart-1: 24 88% 60%; /* Bright carrot orange for charts */
+    --chart-2: 43 74% 66%; /* Yellow-green for secondary chart */
+    --chart-3: 27 87% 67%; /* Yellow-orange for healthy options */
+    --chart-4: 204 71% 50%; /* Cool blue for contrast in charts */
+    --chart-5: 145 58% 50%; /* Green for balance in chart data */
+    --radius: 0.5rem; /* Consistent radius */
+  }
+
+  .dark {
+    --background: 25 40% 15%; /* Dark, warm brown background */
+    --foreground: 36 100% 98%; /* Light orange-tinted text */
+    --card: 25 40% 15%; /* Dark background for cards */
+    --card-foreground: 36 100% 98%; /* Light text for dark card */
+    --popover: 25 40% 15%;
+    --popover-foreground: 36 100% 98%;
+    --primary: 36 100% 90%; /* Bright orange for primary elements */
+    --primary-foreground: 25 40% 15%; /* Dark text on light primary */
+    --secondary: 25 100% 30%; /* Darker orange for secondary elements */
+    --secondary-foreground: 36 100% 98%; /* Light text on dark background */
+    --muted: 25 30% 30%; /* Muted dark orange for subtle elements */
+    --muted-foreground: 36 100% 70%; /* Lighter text for muted background */
+    --accent: 36 100% 90%; /* Light accent color */
+    --accent-foreground: 25 100% 15%; /* Dark foreground for accent elements */
+    --destructive: 0 62.8% 30.6%; /* Dark red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text on destructive background */
+    --border: 25 40% 30%; /* Dark borders */
+    --input: 25 30% 30%; /* Dark input background */
+    --ring: 25 100% 50%; /* Orange ring for focus */
+    --chart-1: 36 100% 80%; /* Vibrant orange chart color */
+    --chart-2: 43 74% 50%; /* Green for contrast in dark mode */
+    --chart-3: 27 87% 60%; /* Yellow-orange for dark mode charts */
+    --chart-4: 204 71% 50%; /* Cool blue contrast */
+    --chart-5: 145 58% 50%; /* Green chart color for balance */
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
